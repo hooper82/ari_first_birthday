@@ -24,7 +24,7 @@ class TrafficLights(object):
 		if self._green.is_lit:
 			self._green.off()
 			self._orange.on()
-		elif self.orange.is_lit:
+		elif self._orange.is_lit:
 			self._orange.off()
 			self._red.on()
 		elif self._red.is_lit:
