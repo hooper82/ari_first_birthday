@@ -29,7 +29,7 @@ class Matrix(object):
     def __init__(self):
         print("Initializing Matrix...", end='')
         self._serial = spi(port=0, device=0, gpio=noop())
-        self._device = max7219(self._serial)
+        self._device = max7219(self._serial, rotate=1)
         self._current_image_name = None
         print("...Done!")
         self.happy_birthday()
