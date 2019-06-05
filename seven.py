@@ -1,6 +1,7 @@
 from luma.led_matrix.device import max7219
 from luma.core.interface.serial import spi, noop
 from luma.core.virtual import sevensegment
+from time import sleep
 
 
 class Seven(object):
@@ -11,6 +12,17 @@ class Seven(object):
         self._device = sevensegment(self._max)
         self._buffer = ''
         print("...Done!")
+
+        self._test()
+
+
+    def _test(self):
+        print('Testing Seven...', end='')
+        for i in range(0, 10):
+            self.add(i)
+            sleep(0.05)
+        self.add('*')
+        print('...Done!')
 
     def add(self, digit):
         if digit in ['*', '#']:

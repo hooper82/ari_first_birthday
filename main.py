@@ -8,8 +8,8 @@ from time import sleep
 
 if __name__ == "__main__":
     seven = Seven()
-    matrix = Matrix()
     traffic = TrafficLights()
+    matrix = Matrix()
     keypad = Keypad(seven.add)
 
     while True:

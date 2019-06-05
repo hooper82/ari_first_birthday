@@ -1,4 +1,5 @@
 from gpiozero import LED
+from time import sleep
 
 
 class TrafficLights(object):
