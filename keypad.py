@@ -13,7 +13,7 @@ COL_PINS = [4, 17, 27] # BCM numbering
 
 
 class Keypad(object):
-	def __init__(self, callback):
-		self._factory = rpi_gpio.KeypadFactory()
-		self._keypad = self._factory.create_keypad(keypad=KEYPAD, row_pins=ROW_PINS, col_pins=COL_PINS)
-		self._keypad.registerKeyPressHandler(callback)
+    def __init__(self, callback):
+        self._factory = rpi_gpio.KeypadFactory()
+        self._keypad = self._factory.create_keypad(keypad=KEYPAD, row_pins=ROW_PINS, col_pins=COL_PINS)
+        self._keypad.registerKeyPressHandler(callback)
