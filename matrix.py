@@ -3,6 +3,8 @@ from luma.core.interface.serial import spi, noop
 from luma.core.render import canvas
 from luma.core.legacy import show_message, text
 
+from time import sleep
+
 
 IMAGES = {
     'solid_heart' : [[0x00, 0x1c, 0x3e, 0x7e, 0xfc, 0x7e, 0x3e, 0x1c]],
