@@ -24,7 +24,7 @@ class Matrix(object):
     def happy_birthday(self):
         print('saying hello')
         msg = "Happy Birthday Ari!"
-        show_message(matrix, msg, fill="white", scroll_delay=0.05)
+        show_message(self._device, msg, fill="white", scroll_delay=0.05)
         self.change_image()
 
     def change_image(self):
