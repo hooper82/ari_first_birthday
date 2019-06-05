@@ -10,4 +10,5 @@ if __name__ == "__main__":
     matrix = Matrix()
     keypad = Keypad(seven.add)
 
-    sleep(30)
+    while True:
+        sleep(1)

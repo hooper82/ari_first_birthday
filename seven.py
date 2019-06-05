@@ -13,13 +13,14 @@ class Seven(object):
         print("...Done!")
 
     def add(self, digit):
-        print(digit)
         if digit in ['*', '#']:
             self._buffer = ''
+            print('Clearing Buffer')
         else:
             self._buffer = '{}{}'.format(digit, self._buffer)
             if len(self._buffer) > 8:
                 self._buffer = self._buffer[:-1]
+            print('Adding {}'.format(digit))
         self._update()
 
     def _update(self):
