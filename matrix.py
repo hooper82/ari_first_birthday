@@ -3,7 +3,7 @@ from luma.core.interface.serial import spi, noop
 from luma.core.render import canvas
 from luma.core.legacy import show_message, text
 
-from time import sleep
+from random import choice
 
 
 IMAGES = {
@@ -33,31 +33,23 @@ class Matrix(object):
         self._current_image = None
         print("...Done!")
         self.happy_birthday()
-
-    def happy_birthday(self):
-        print('saying hello')
-        msg = "Happy Birthday Ari!"
-        show_message(self._device, msg, fill="white", scroll_delay=0.05)
-
-        for k in IMAGES.keys():
-            self._draw_image(IMAGES[k])
-            sleep(1)
-
         self.change_image()
 
-    def change_image(self):
-        exit()
-        print('changing image')
-        if self._current_image is None:
-            self._current_image = IMAGE_1
-        elif self._current_image == IMAGE_1:
-            self._current_image = IMAGE_2
-        else:
-            self._current_image = IMAGE_1
+    def happy_birthday(self):
+        print('Saying Happy Birthday...', end='')
+        msg = "Happy Birthday Ari!"
+        show_message(self._device, msg, fill="white", scroll_delay=0.05)
+        print('..Done!')
 
+    def change_image(self):
+        print('changing image')
+        image_names = list(IMAGES.keys())
+        if self._current_image in image_names:
+            image_names.pop(self._current_image)
+
+        self._current_image = choice(image_names)
         self._draw_image(self._current_image)
 
     def _draw_image(self, image):
         with canvas(self._device) as draw:
             text(draw, (0, 0), "\0", fill="white", font=image)
-
