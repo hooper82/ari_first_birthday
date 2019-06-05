@@ -13,4 +13,5 @@ if __name__ == "__main__":
     keypad = Keypad(seven.add)
 
     while True:
+        traffic.cycle()
         sleep(1)

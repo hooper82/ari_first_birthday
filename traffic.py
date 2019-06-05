@@ -21,4 +21,13 @@ class TrafficLights(object):
 		print('...Done!')
 
 	def cycle(self):
-		pass
+		if self._green.is_lit:
+			self._green.off()
+			self._orange.on()
+		elif self.orange.is_lit:
+			self._orange.off()
+			self._red.on()
+		elif self._red.is_lit:
+			self._red.off()
+		else:
+			self._green.on()

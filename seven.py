@@ -19,20 +19,22 @@ class Seven(object):
     def _test(self):
         print('Testing Seven...', end='')
         for i in range(0, 10):
-            self.add(i)
+            self.add(i, test=True)
             sleep(0.05)
-        self.add('*')
+        self.add('*', test=True)
         print('...Done!')
 
-    def add(self, digit):
+    def add(self, digit, test=False):
         if digit in ['*', '#']:
             self._buffer = ''
-            print('Clearing Buffer')
+            if not test:
+                print('Clearing Buffer')
         else:
             self._buffer = '{}{}'.format(digit, self._buffer)
             if len(self._buffer) > 8:
                 self._buffer = self._buffer[:-1]
-            print('Adding {}'.format(digit))
+            if not test:
+                print('Adding {}'.format(digit))
         self._update()
 
     def _update(self):
