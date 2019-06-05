@@ -14,4 +14,5 @@ if __name__ == "__main__":
 
     while True:
         traffic.cycle()
+        matrix.change_image()
         sleep(1)
