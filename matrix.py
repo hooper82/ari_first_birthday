@@ -30,7 +30,7 @@ class Matrix(object):
         print("Initializing Matrix...", end='')
         self._serial = spi(port=0, device=0, gpio=noop())
         self._device = max7219(self._serial)
-        self._current_image = None
+        self._current_image_name = None
         print("...Done!")
         self.happy_birthday()
         self.change_image()
@@ -44,12 +44,13 @@ class Matrix(object):
     def change_image(self):
         print('changing image')
         image_names = list(IMAGES.keys())
-        if self._current_image in image_names:
+        if self._current_image_name in image_names:
             image_names.pop(self._current_image)
 
-        self._current_image = choice(image_names)
-        self._draw_image(self._current_image)
+        self._current_image_name = choice(image_names)
+        self._draw_image(self._current_image_name)
 
-    def _draw_image(self, image):
+    def _draw_image(self, image_name):
+        image = IMAGES[image_name]
         with canvas(self._device) as draw:
             text(draw, (0, 0), "\0", fill="white", font=image)
