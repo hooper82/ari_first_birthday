@@ -35,7 +35,7 @@ class Matrix(object):
 
         self._draw_image(self._current_image)
 
-    def _draw_image(self, image)
+    def _draw_image(self, image):
         with canvas(self._device) as draw:
             text(draw, (0, 0), "\0", fill="white", font=image)
 
