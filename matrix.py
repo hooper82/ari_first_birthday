@@ -42,7 +42,3 @@ class Matrix(object):
         with canvas(self._device) as draw:
             text(draw, (0, 0), "\0", fill="white", font=image)
 
-        if digit in ['*', '#']:
-            self._device.text = ''
-        else:
-            self._device.text += digit
