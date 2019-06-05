@@ -45,7 +45,7 @@ class Matrix(object):
         print('changing image')
         image_names = list(IMAGES.keys())
         if self._current_image_name in image_names:
-            image_names.pop(self._current_image)
+            image_names.pop(self._current_image_name)
 
         self._current_image_name = choice(image_names)
         self._draw_image(self._current_image_name)
