@@ -21,6 +21,7 @@ class TrafficLights(object):
 		print('...Done!')
 
 	def cycle(self):
+		print('Cycling Traffic Lights')
 		if self._green.is_lit:
 			self._green.off()
 			self._orange.on()

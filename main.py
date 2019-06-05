@@ -2,6 +2,7 @@ from seven import Seven
 from matrix import Matrix
 from keypad import Keypad
 from traffic import TrafficLights
+from buttons import ButtonHandler
 
 from time import sleep
 
@@ -11,8 +12,6 @@ if __name__ == "__main__":
     traffic = TrafficLights()
     matrix = Matrix()
     keypad = Keypad(seven.add)
+    buttons = ButtonHandler(matrix.change_image, traffic.cycle)
 
-    while True:
-        traffic.cycle()
-        matrix.change_image()
-        sleep(1)
+    pause()
