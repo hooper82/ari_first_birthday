@@ -14,9 +14,12 @@ IMAGE_2 = [
 
 class Matrix(object):
     def __init__(self):
+        print("Initializing Matrix...", end='')
         self._serial = spi(port=0, device=0, gpio=noop())
         self._device = max7219(self._serial)
         self._current_image = None
+        print("...Done!")
+        self.happy_birthday()
 
     def happy_birthday(self):
         print('saying hello')
