@@ -5,6 +5,7 @@ from traffic import TrafficLights
 from buttons import ButtonHandler
 
 from time import sleep
+from signal import pause
 
 
 if __name__ == "__main__":
